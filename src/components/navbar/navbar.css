@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    background: rgb(76, 139, 240);
+    color: white;
+}
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+.logo span {
+    font-size: 1.875rem;
+}
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 80%;
+}
+.home,
+.contact,
+.write-blog,
+.sign-Up,
+.login,
+.logout{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    margin: 0 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.sign-Up{
+    border: 1px solid yellow;
+    border-radius: 5px;
+}
+.menu-bar-icon {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .nav-links{
+        display: none;
+    }
+    .nav-links-mobile {
+        position: absolute;
+        display: block;
+        list-style: none;
+        background-color: rgb(59, 111, 196);
+        left: 0;
+        top: 75px;
+        transition: all 0.5s ease-in-out;
+        width: 100%;
+    }
+    .home,
+    .contact,
+    .write-blog,
+    .sign-Up,
+    .login,
+    .logout{
+    text-align: center;
+    color: white;
+    padding: 30px;
+    width:100%;
+    transition: all 0.5s ease;
+    }
+    .sign-Up{
+        border: none;
+    }
+    .menu-bar-icon{
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        color: white;
+        background-color: rgb(76, 139, 240);
+        border: none;
+        outline: none;
+        top: 15px;
+        right: 25px;
+    }
+}

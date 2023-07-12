@@ -1,0 +1,27 @@
+.first {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+.body{
+  background: rgb(76, 139, 240);
+}
+
+.reg_container{
+    width: clamp(270px, 55%, 500px);
+}
+
+.font {
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+} 
+.pass-btn{
+  margin-top: -45px;
+  margin-left: 80px;
+  overflow: hidden;
+}
+.form-group div {
+  display: flex;
+  gap: 5px;
+}
