@@ -1,0 +1,11 @@
+.login_container{
+    width: clamp(270px, 55%, 500px);
+}
+.font {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+} 
+/* .first {
+    display: flex;
+} */
