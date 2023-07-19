@@ -7,20 +7,26 @@ import Contact from "./components/contact/Contact"
 import Login from "./components/login/Login"
 import Signup from "./components/signup/Signup"
 import WriteBlog from "./components/writeblog/Write"
+import AddPost from "./components/addpost/AddPost"
+import NewsFeed from "./components/newsf/NewsFeed"
 
 function App() {
 
   return (
-  <BrowserRouter>
-    <Navbar />
-      <Routes>
-          <Route path="/home" element={<Home/>}></Route>
-          <Route path="/contact" element={<Contact/>}></Route>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/sign-up" element={<Signup/>}></Route>
-          <Route path="/write-blog" element={<WriteBlog/>}></Route>
-      </Routes>
-  </BrowserRouter> 
+      <div>
+         <BrowserRouter>
+           <Navbar />
+             <Routes>
+                 <Route path="/" element={<Home/>}></Route>
+                 <Route path="/contact" element={<Contact/>}></Route>
+                 <Route path="/newsfeed" element={<NewsFeed />}></Route>
+                 <Route path="/login" element={<Login/>}></Route>
+                 <Route path="/sign-up" element={<Signup/>}></Route>
+                 <Route path="/write-blog" element={<WriteBlog/>}></Route> 
+                 <Route path="/Add-post" element={<AddPost/>}></Route>
+             </Routes>
+         </BrowserRouter> 
+      </div>
   )
 }
 

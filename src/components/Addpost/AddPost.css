@@ -1,0 +1,65 @@
+.logout-btn{
+    margin: 20px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.logout-btn button{
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background:rgb(76, 139, 240);
+    color: white;
+    border: none;
+}
+.logout-btn button:hover{
+    background-color: rgb(36, 110, 228);
+}
+.alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.alert p {
+    border: 1px solid black;
+    padding: 6px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.publish-btn button {
+    font-weight: bold;
+}
+.form-text label{
+    font-weight:500;
+    margin-top: 15px;
+    font-size: 20px;
+}
+.form_container{
+    width: clamp(370px, 80%, 1000px);
+}
+.first {
+    display: flex;
+    align-items: center;
+    height: 80vh;
+    margin-bottom: 20px;
+  }
+@media screen and (max-width: 1000px) {
+    .first{
+        display: block;
+        height: 50vh;
+        margin-top: 10vh;
+    }
+    .publish-btn{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+    .publish-btn button {
+        font-weight: bold;
+    }
+    .logout-btn{
+        margin: 20px;
+    }
+}

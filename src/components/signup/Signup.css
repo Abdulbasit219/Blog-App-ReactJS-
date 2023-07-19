@@ -1,14 +1,15 @@
-.first {
+.first1 {
   display: flex;
   align-items: center;
   height: 80vh;
+  margin-bottom: 20px;
 }
 .body{
   background: rgb(76, 139, 240);
 }
 
 .reg_container{
-    width: clamp(270px, 55%, 500px);
+    width: clamp(343px, 60%, 600px);
 }
 
 .font {
@@ -16,12 +17,14 @@
   font-weight: bold;
   text-align: center;
 } 
-.pass-btn{
-  margin-top: -45px;
-  margin-left: 80px;
-  overflow: hidden;
-}
 .form-group div {
   display: flex;
   gap: 5px;
+}
+@media screen and (max-width: 1000px) {
+  .first1{
+      display: block;
+      height: 50vh;
+      margin-top: 20vh;
+  }
 }

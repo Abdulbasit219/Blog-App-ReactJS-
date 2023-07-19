@@ -1,11 +1,24 @@
 .login_container{
-    width: clamp(270px, 55%, 500px);
+    width: clamp(340px, 55%, 500px);
 }
 .font {
     font-size: x-large;
     font-weight: bold;
     text-align: center;
 } 
-/* .first {
+.form-btn {
     display: flex;
-} */
+}
+.form-btn button{
+    margin-left: 0.62rem;
+}
+.text{
+    text-align: center;
+}
+@media screen and (max-width: 1000px) {
+    .first1{
+        display: block;
+        height: 50vh;
+        margin-top: 20vh;
+    }
+}

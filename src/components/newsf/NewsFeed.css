@@ -1,0 +1,14 @@
+.Blog Data{
+    background-color: #fff;
+}
+
+h1{
+    margin: 10px;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+p{
+    text-align: center;
+    margin: 5px;
+}
