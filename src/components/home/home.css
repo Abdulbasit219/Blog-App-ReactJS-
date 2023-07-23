@@ -7,7 +7,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-35%, -190%);
+    transform: translate(-36%, -162%);
 }
 .center-position h2{
     font-size: 30px;
@@ -16,12 +16,15 @@
 .center-position p{
     font-size: 20px;
     font-weight: bolder;
+    color: darkblue;
 }
 .center-position h1{
     font-size: 50px;
     font-weight: bolder;
     font-family: serif;
+    color: darkblue;
 }
+
 @media screen and (max-width: 850px) {
     .center-position{
         position: absolute;

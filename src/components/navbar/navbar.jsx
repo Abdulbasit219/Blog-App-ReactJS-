@@ -9,10 +9,11 @@ function navbar () {
     const [isMobile,setisMobile] = useState(false)
 
     const toggleMobile = () => {
-            setisMobile(!isMobile)
+            setisMobile(!isMobile)  
         }
 
     return (
+        <div className='navbar-position'>
         <nav className='nav-cont'>
             <h3 className='logo'><span>.</span>Blog</h3>
             <ul className={isMobile ? "nav-links-mobile" : "nav-links"} onClick={()=>setisMobile(false)}>
@@ -34,6 +35,7 @@ function navbar () {
                 : <FaBars/> }
             </button>
         </nav>
+        </div>
     )
 }
 

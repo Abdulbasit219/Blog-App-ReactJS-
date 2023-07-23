@@ -1,29 +1,36 @@
-body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.bground {
-    background-color: aliceblue;
-    width: 60%;
-    margin: auto;
-    border-radius: 1rem;
-    height: 80px;
-    transform: translateY(50%);
-}
-.parent {
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 20px;
-}
-.btn-div{
-    display: flex;
-    align-items: center;
-}
-.btn-div button{
-    font-weight: 600;
-}
-.cont-bground {
+.background{
     background-color: rgb(76, 139, 240);
-    height: 300px;
+}
+.containers{
+    max-width: 1200px;
+}
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+    height: 70vh;
+}
+.columns{
+   width: 100%;
+   padding: 0% 15px;
+   margin-top: 5vh;
+}
+
+@media screen and (min-width: 760px) {
+    .columns{
+        width: 50%;
+        margin-top: 4rem;
+    }
+    .rows{
+        height: 40vh;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .columns{
+        width: 33%;
+        margin-top: 6rem;
+    }
+    .rows{
+        height: 40vh;
+    }
 }

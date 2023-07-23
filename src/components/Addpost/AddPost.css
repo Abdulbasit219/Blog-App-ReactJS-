@@ -48,7 +48,7 @@
 @media screen and (max-width: 1000px) {
     .first{
         display: block;
-        height: 50vh;
+        height: 61vh;
         margin-top: 10vh;
     }
     .publish-btn{
@@ -61,5 +61,13 @@
     }
     .logout-btn{
         margin: 20px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .first{
+        display: block;
+        height: 80vh;
+        margin-top: 10vh;
     }
 }

@@ -1,35 +1,33 @@
-import './Footer.css'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import './Footer.css'
 
 function Footer() {
+
   return (
-        <>
-        <section className='sec'>
-            <div className='bground'>
-            <div className='parent'>
-                <div>
-                    <h4>Ready to get Started</h4>
-                    <h4>Talk to us Today</h4>
-                </div>
-                <div className='btn-div'>
-                    <Link>
-                        <button className='btn btn-primary'>Get Started</button>
-                    </Link>
-                </div>
+    <>
+      <div className='background text-white'>
+        <div className='containers mx-auto mt-6'>
+          <div className='rows'>
+          
+            <div className='columns'>
+              Home Write Blog Contact Newsfeed
             </div>
+          
+            <div className='columns'>Contact Phone Gmail</div>
+            
+            <div className='columns'>Follow Us
+              <div className='flex'>
+                <p>facebook</p>
+                <p>Twitter</p>
+                <p>LinkedIn</p>
+                <p>Youtube</p>
+              </div>
             </div>
-        </section>
-        
-        
-        <footer className='cont-bground'>
-            <div className='parent'>
-                <div className='child'>
-                    <h3>Viral Blog</h3>
-                </div>
-            </div>
-        </footer>
-        </>
+          
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./Signup.css"
 import { VscEyeClosed, VscEye } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function Signup() {
 
@@ -13,6 +13,7 @@ function Signup() {
     });
 
     const [data,setData] = useState([])
+    const navigate = useNavigate();
 
     const onchange = (e) => {
         const { value, name } = e.target
@@ -30,8 +31,21 @@ function Signup() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-       localStorage.setItem('registeration',JSON.stringify([...data,isregister]));
-       alert("Sucessfully registered")
+        if(isregister.name === null){
+            alert("Name Field is required")
+        }else if(isregister.email === null){
+            alert("Email Field is required")
+        }else if(!isregister.email.includes("@")){
+            alert("Please enter a valid email address")
+        }else if(isregister.password === null){
+            alert("Password Field is required")
+        }else if(isregister.password.length < 8){
+            alert("Password must be at least 8 characters long")
+        }else{        
+        localStorage.setItem('registeration',JSON.stringify([...data,isregister]));
+        alert("Sucessfully registered")
+        navigate('/login')
+        }
     }
 
 
@@ -70,7 +84,7 @@ function Signup() {
                             <button className="btn" type="button" onClick={showpasshandle}>{btnicon}</button>
                         </div>
                     </div>
-                    <button class="btn btn-primary" onClick={onSubmit}>Register</button>
+                    <button className="btn btn-primary" onClick={onSubmit}>Register</button>
                 </form>
                     <div className="text">
                      <p>Already Have an Account <Link to="/login" className="text-blue-500 underline underline-offset-1">Sign in</Link></p>

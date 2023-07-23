@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import Home from "./components/home/Home"
 import "./App.css"
 import Navbar from "./components/navbar/navbar"
@@ -7,8 +7,9 @@ import Contact from "./components/contact/Contact"
 import Login from "./components/login/Login"
 import Signup from "./components/signup/Signup"
 import WriteBlog from "./components/writeblog/Write"
-import AddPost from "./components/addpost/AddPost"
 import NewsFeed from "./components/newsf/NewsFeed"
+import AddPost from "./components/addpost/AddPost"
+import Footer from "./components/footer/Footer"
 
 function App() {
 
@@ -25,7 +26,8 @@ function App() {
                  <Route path="/write-blog" element={<WriteBlog/>}></Route> 
                  <Route path="/Add-post" element={<AddPost/>}></Route>
              </Routes>
-         </BrowserRouter> 
+         </BrowserRouter>
+         <Footer /> 
       </div>
   )
 }
