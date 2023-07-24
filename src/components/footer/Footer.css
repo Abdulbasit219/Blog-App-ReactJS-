@@ -1,5 +1,5 @@
 .background{
-    background-color: rgb(76, 139, 240);
+    background-color: rgb(9, 27, 64);
 }
 .containers{
     max-width: 1200px;
@@ -7,6 +7,7 @@
 .rows {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     height: 70vh;
 }
 .columns{
@@ -27,10 +28,12 @@
 
 @media screen and (min-width: 1000px) {
     .columns{
-        width: 33%;
-        margin-top: 6rem;
+        width: 30%;
+        margin-top: 3rem;
+
     }
     .rows{
-        height: 40vh;
+        display: flex;
+        justify-content: center;
     }
 }

@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     height: 75px;
-    background: rgb(76, 139, 240);
+    background: rgb(9, 27, 64);
     color: white;
     z-index: 100000;
 }
@@ -71,7 +71,7 @@
         z-index: 99;
         display: block; 
         list-style: none;
-        background-color: rgb(59, 111, 196);
+        background-color: rgb(26, 37, 59);
         left: 0;
         top: 75px; 
         transition: all 0.5s ease-in-out;
@@ -99,7 +99,7 @@
         position: absolute;
         font-size: 30px;
         color: white;
-        background-color: rgb(76, 139, 240);
+        background-color: rgb(9, 27, 64);
         border: none;
         outline: none;
         top: 15px;

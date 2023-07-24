@@ -3,6 +3,7 @@ import "./AddPost.css"
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import JoditEditor from 'jodit-react'
+import AddPostCr from './AddPostCr'
 
 const getdatafromLS = () => {
   const data = localStorage.getItem('blogsdata')
@@ -22,6 +23,8 @@ function AddPost() {
   const [title, setTitle] = useState()
   const [category, setCategory] = useState()
   const [content, setContent] = useState()
+  const [changebtn, setChangebtn] = useState(true)
+  const [iseditId, setIseditId] = useState(null)
 
   const navigate = useNavigate()
 
@@ -43,27 +46,60 @@ function AddPost() {
   
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(!title || !content || !category){
+      alert('All fields are required');
+    }
+    else if(title && !changebtn){
+      setBlogData(
+        blogdata.map((element) => {
+          if(element.id === iseditId){
+            return {...element, title: title, category: category, content: content}
+          }
+          return element
+    })
+      )
+      setChangebtn(true)
+      setTitle('')
+      setCategory('')
+      setContent('')
+    }
+
+    else{
     let blogdata2={
     title: title,
     content: content,
-    category: category
+    category: category,
+    id: blogdata.length+1
     }
-    setBlogData([...blogdata,blogdata2])
+      setBlogData([...blogdata,blogdata2])
+      setTitle('')
+      setCategory('')
+      setContent('')
   }
-
+  }
 
    useEffect(()=>{
       localStorage.setItem('blogsdata', JSON.stringify(blogdata))
    },[blogdata])
 
-   const [isOpen, setIsOpen] = useState(false)
+  const deleteitem = (id) => {
+      const filtered = blogdata.filter((element)=>{
+        return element.id !== id
+      })
+      setBlogData(filtered)
+  }
 
-    const parastyle = {
-        WebkitLineClamp: 1,
-        WebkitBoxOrient: 'vertical',
-        overflow: 'hidden',
-        display: '-webkit-box'
-    }
+  const edititem = (id) => {
+    const newedititem = blogdata.find((item)=>{
+      return item.id === id
+    })
+    console.log(newedititem);
+    setTitle(newedititem.title)
+    setCategory(newedititem.category)
+    setContent(newedititem.content)
+    setChangebtn(false)
+    setIseditId(id)
+  } 
 
   return (
     <>
@@ -81,7 +117,7 @@ function AddPost() {
             <form>
               <div className='form group'>
                 <label htmlFor="title">Blog Title</label>
-                <input type="text" name="title"
+                <input type="text" value={title}
                 onChange={(e)=>{setTitle(e.target.value)}} className='form-control' placeholder='Enter Title Here'></input>
               </div>
               
@@ -98,9 +134,9 @@ function AddPost() {
               
               <div>
                 <label htmlFor="category">Select Category</label>
-                <select name="category" className='form-control'
+                <select className='form-control' value={category}
                 onChange={(e)=>{setCategory(e.target.value)}}>
-                  <option value="" disabled>---select---</option>
+                  <option value="" >---select---</option>
                   <option value="Entertainment">Entertainment</option>
                   <option value="Sports">Sports</option>
                   <option value="News">News</option>
@@ -113,24 +149,24 @@ function AddPost() {
             </form>
           </div>
 
-          <div className='mx-2 publish-btn'>
-          <button className='btn btn-primary bg-blue-400' type='button' onClick={handleSubmit}>Publish</button>
+          <div className='mx-2 publish-btn logout-btn button'>
+           
+          <button type='button' onClick={handleSubmit}>{changebtn ? "Publish" : "Update"}</button>
           </div>
           </div>
 
-          <div className='mx-auto w-[90%] shadow mb-5 rounded-md p-2'>
-            <div className='bg-white hover:border-4 border-blue-200 rounded-md'>  
+          <div>
               {blogdata.map((data) => (
-                <div key={data.id}>
-                  <h1 className='cursor-pointer hover:text-blue-400'>{data.title}</h1>
-                  <p style={isOpen ? null : parastyle} dangerouslySetInnerHTML={{ __html: data.content }}/>
-                  <p className='opacity-40 flex'>{data.category}</p>
-                  <button className='m-2 btn btn-secondary' 
-                  onClick={()=>{setIsOpen(!isOpen)}}>{isOpen ? 'read less' : 'read more...'}</button>
-                </div>
+                 <AddPostCr 
+                 key={data.id}
+                 title={data.title}
+                 content={data.content}
+                 category={data.category}
+                 delete={()=>deleteitem(data.id)}
+                 edit={()=>{edititem(data.id)}}
+                 />
               ))
-              }
-            </div>  
+              }  
           </div>         
       </>
   )
@@ -139,4 +175,3 @@ function AddPost() {
 export default AddPost
 
 
-// onClick={()=>{{location.adddata(blogdata.title, blogdata.content, blogdata.category)}}}

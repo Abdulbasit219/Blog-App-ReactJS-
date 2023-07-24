@@ -23,9 +23,6 @@ function navbar () {
                 <Link to="/newsfeed" className='newsfeed'>
                     <li>News Feed</li>
                 </Link>
-                <Link to="/contact" className='contact'>
-                    <li>Contact</li>
-                </Link>
                 <Link to="/write-blog" className='write-blog'>
                     <li >Write Blog</li>
                 </Link>
