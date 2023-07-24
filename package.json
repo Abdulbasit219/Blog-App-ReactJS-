@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
