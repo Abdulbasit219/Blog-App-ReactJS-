@@ -8,7 +8,6 @@ function Footer() {
 
   return (
     <>
-    <footer>
       <div className='background text-white'>
         <div className='containers mx-auto mt-6'>
           <div className='rows'>
@@ -42,7 +41,6 @@ function Footer() {
             </div>
         </div>
       </div>
-      </footer>
     </>
   )
 }
