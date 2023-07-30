@@ -1,10 +1,12 @@
 .text-login {
-   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .text-login p {
     font-weight: bold;
-    font-size: 30px;
-}
-.text-login p Link {
-    text-decoration: ;
+    font-size: 26px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
 }

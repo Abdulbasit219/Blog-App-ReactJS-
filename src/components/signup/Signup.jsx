@@ -5,44 +5,55 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function Signup() {
 
-    const [isregister, setIsregister] = useState({
-        name: null,
-        email: null,
-        password: null,
-        showpass: false
-    });
+    const [isregister, setIsregister] = useState(
+        // name: null,
+        // email: null,
+        // password: null,
+        false
+        );
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState([])
 
     const [data,setData] = useState([])
     const navigate = useNavigate();
 
-    const onchange = (e) => {
-        const { value, name } = e.target
-        setIsregister(() => {
-            return {
-                ...isregister,
-                [name]: value
-            }
-        })
-    }
+    // const onchange = (e) => {
+    //     const { value, name } = e.target
+    //     setIsregister(() => {
+    //         return {
+    //             ...isregister,
+    //             [name]: value
+    //         }
+    //     })
+    // }
 
     const showpasshandle = () => {
-     setIsregister({showpass: !isregister.showpass}
-    )}
+     setIsregister(!isregister)
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if(isregister.name === null){
+        if(name == ''){
             alert("Name Field is required")
-        }else if(isregister.email === null){
+        }else if(email == ''){
             alert("Email Field is required")
-        }else if(!isregister.email.includes("@")){
+        }else if(!email.includes("@")){
             alert("Please enter a valid email address")
-        }else if(isregister.password === null){
+        }else if(password == ''){
             alert("Password Field is required")
-        }else if(isregister.password.length < 8){
+        }else if(password.length < 8){
             alert("Password must be at least 8 characters long")
         }else{        
-        localStorage.setItem('registeration',JSON.stringify([...data,isregister]));
+
+         const newdata = {
+            name: name,
+            email: email,
+            password: password
+         }   
+
+        localStorage.setItem('registeration',JSON.stringify([...data,newdata]));
         alert("Sucessfully registered")
         navigate('/login')
         }
@@ -50,7 +61,7 @@ function Signup() {
 
 
     let  passtype, btnicon;
-    if (isregister.showpass === true) {
+    if (isregister === true) {
         btnicon = <VscEyeClosed />;
         passtype = "text";
 
@@ -69,18 +80,18 @@ function Signup() {
 
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
-                        <input type="text" name="name" onChange={onchange} className="form-control"></input>
+                        <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} className="form-control"></input>
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
-                        <input type="text" name="email" onChange={onchange} className="form-control"></input>
+                        <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} className="form-control"></input>
                     </div>
 
                     <div className="form-group">
                             <label htmlFor="password">Password</label>
                         <div>
-                            <input type={passtype} name="password" onChange={onchange} className="form-control"></input>
+                            <input type={passtype} value={password} onChange={(e)=>{setPassword(e.target.value)}} className="form-control"></input>
                             <button className="btn" type="button" onClick={showpasshandle}>{btnicon}</button>
                         </div>
                     </div>

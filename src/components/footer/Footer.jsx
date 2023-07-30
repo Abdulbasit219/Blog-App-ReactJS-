@@ -8,38 +8,42 @@ function Footer() {
 
   return (
     <>
-      <div className='background text-white'>
-        <div className='containers mx-auto mt-6'>
-          <div className='rows'>
-          
-            <div className='columns logo flex flex-col'>
-              <p><span>.</span>Blog</p>
-              <div className='ml-2 shadow'><button className='btn btn-secondary'>Get Started</button></div>
-            </div>
-          
-            <div className='columns text-xl'>
-              Contact US
-            <div className='text-2xl mt-3 flex'><BsFillTelephoneFill/><a href="#"><p className='text-sm'>+92 316 2956262</p></a></div>
-            <div className='text-2xl mt-3 flex'><BiLogoGmail/><a href="#"><p className='text-sm'>abdulbasitbasit076@gmail.com</p></a></div>
-            <div className='text-2xl mt-3 flex'><BiLocationPlus/><a href="#"><p className='text-sm'>Idara Noor e Haq</p></a></div>
-              
-            </div>
+      <div className='containers'>
+          <div>
+            <div className='rows'>
+
+                <div className='columns'>
+                <p className='text-white text-3xl font-extrabold'><span>.</span>Blog</p>
+                <p className='text-white opacity-60 italic'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum nesciunt culpa ratione recusandae obcaecati earum velit, ut repudiandae magnam facilis, repellat eligendi dolorem nisi et minus quod voluptatibus enim sapiente.</p>
+                </div>
+                
+                <div className='text-white columns'>
+                <p className='text-2xl'>Contact Us</p>
+                
+                <div className='pt-2 p-2 phone'><BsFillTelephoneFill/><p className='hover:text-gray-400'>+92 316 2956262</p></div>
+                
+                <div className='pt-2 p-2 gmail'><BiLogoGmail/><p className='hover:text-gray-400'>abdulbasitbasit076@gmail.com</p></div>
+                
+                <div className='pt-2 p-2 location'><BiLocationPlus/><p className='hover:text-gray-400'>Karachi</p></div>
+                
+                </div>
+                
+                <div className='text-white columns '> 
+                  <p className='text-2xl'>Follow Us</p>
+                  <div className='social-icon'>
+                  <div className='pt-2 p-2 text-2xl'><a href="https://www.facebook.com/abdulbasitmaqsood.awan" className='hover:text-blue-500'><AiFillFacebook/></a></div>
+                  <div className='pt-2 p-2 text-2xl'><a href="https://www.linkedin.com/in/abdul-basit-114a7322b/" className='hover:text-blue-500'><AiFillLinkedin/></a></div>
+                  <div className='pt-2 p-2 text-2xl'><a href="#" className='hover:text-blue-300'><AiFillTwitterSquare/></a></div>
+                  <div className='pt-2 p-2 text-2xl'><a href="https://www.youtube.com/channel/UCQZXLRaznfGuYPRMkpDIrGA" className='hover:text-red-300'><AiFillYoutube/></a></div>
+                  </div>
+                </div>     
             
-            <div className='columns text-xl'>Follow Us
-              <div className='flex text-3xl'>
-                <a href="#"><p className='hover:text-blue-500'><AiFillFacebook/></p></a>
-                <a href="#"><p className='hover:text-blue-500'><AiFillLinkedin/></p></a>
-                <a href="#"><p className='hover:text-black-300'><AiFillTwitterSquare/></p></a>
-                <a href="#"><p className='hover:text-red-500'><AiFillYoutube/></p></a>
-              </div>
             </div>
-          
-          
           </div>
-            <div className='flex h-8 justify-center'>
-                <p className='text-sm'>@2023 Copyright Viral-Blog.com</p>
-            </div>
-        </div>
+                <div className='text-white p-2'>
+                <hr className='w-[90%] mx-auto'/>
+                <p className='text-sm text-center'>@2023 Copyright Viral-Blog.com</p>
+                </div>
       </div>
     </>
   )

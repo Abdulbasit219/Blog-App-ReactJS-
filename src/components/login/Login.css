@@ -1,5 +1,5 @@
 .login_container{
-    width: clamp(340px, 55%, 500px);
+    width: 270px;
 }
 .font {
     font-size: x-large;
@@ -15,11 +15,24 @@
 .text{
     text-align: center;
 }
-
-@media screen and (max-width: 1000px) {
-    .first1{
-        display: block;
-        height: 50vh;
-        margin-top: 20vh;
-    }
+.first2 {
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    margin-top: 4.375rem;
 }
+@media screen and (min-width: 300px) {
+    .login_container{
+      width: 340px;
+    }
+  }
+  @media screen and (min-width: 540px){
+    .login_container{
+      width: 450px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .login_container{
+      width: 600px;
+    }
+  }

@@ -14,10 +14,10 @@ function AddPostCr(props) {
     display: '-webkit-box'
   }
 
-  return (
+  return ( 
     <div className='mx-auto w-[90%] shadow mb-5 rounded-md p-2'>
       <div className='bg-white hover:border-4 border-blue-200 rounded-md'>
-        <h1 className='cursor-pointer hover:text-blue-400'>{props.title}</h1>
+        <p className='cursor-pointer hover:text-blue-400 font-bold text-2xl'>{props.title}</p>
         <p style={isOpen ? null : parastyle}
           dangerouslySetInnerHTML={{ __html: props.content }} />
         <p className='opacity-40 flex '>Category: {props.category}</p>

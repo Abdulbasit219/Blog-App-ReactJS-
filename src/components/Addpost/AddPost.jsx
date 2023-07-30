@@ -20,9 +20,9 @@ function AddPost() {
 
   const [loggedindetails, setLoggedIndetails] = useState([])
   const [blogdata, setBlogData] = useState(getdatafromLS())
-  const [title, setTitle] = useState()
-  const [category, setCategory] = useState()
-  const [content, setContent] = useState()
+  const [title, setTitle] = useState('')
+  const [category, setCategory] = useState('')
+  const [content, setContent] = useState('')
   const [changebtn, setChangebtn] = useState(true)
   const [iseditId, setIseditId] = useState(null)
 
@@ -103,39 +103,44 @@ function AddPost() {
 
   return (
     <>
-      {    
+      {  
         loggedindetails.length === 0 ? <div className='alert'><p>Please Sign In First <Link to="/login" className='text-blue-400'>Sign In</Link></p>
-        </div> :
+        </div> 
+        :
+        <div>
           <div className='logout-btn'>
             <button onClick={onlogout} className='mt-16'>
               Log Out
             </button>
           </div>
-      }
+      
         <div className='first'>
           <div className='container card p-2 form-text form_container shadow rounded'>
+      
             <form>
               <div className='form group'>
                 <label htmlFor="title">Blog Title</label>
                 <input type="text" value={title}
-                onChange={(e)=>{setTitle(e.target.value)}} className='form-control' placeholder='Enter Title Here'></input>
+                onChange={e=>setTitle(e.target.value)} className='form-control' placeholder='Enter Title Here'></input>
               </div>
               
               <div className='form group'>
                 <label htmlFor="content">Type Blog</label>
+                <div className='jodit-text'>
                   <JoditEditor
                   ref={editor}
                   value={content}
                   tabIndex={1}
                   onBlur={(newContent) => setContent(newContent)}
-                  onChange={(newContent=>{setContent(newContent.target)})}
+                  onChange={newContent=>setContent(newContent)}
                   />
+                  </div>
               </div>
               
               <div>
                 <label htmlFor="category">Select Category</label>
                 <select className='form-control' value={category}
-                onChange={(e)=>{setCategory(e.target.value)}}>
+                onChange={e=>setCategory(e.target.value)}>
                   <option value="" >---select---</option>
                   <option value="Entertainment">Entertainment</option>
                   <option value="Sports">Sports</option>
@@ -154,7 +159,7 @@ function AddPost() {
           <button type='button' onClick={handleSubmit}>{changebtn ? "Publish" : "Update"}</button>
           </div>
           </div>
-
+        
           <div>
               {blogdata.map((data) => (
                  <AddPostCr 
@@ -167,9 +172,12 @@ function AddPost() {
                  />
               ))
               }  
-          </div>         
+          </div>
+          </div>
+}
       </>
   )
+            
 }
 
 export default AddPost

@@ -1,15 +1,14 @@
 .first1 {
   display: flex;
   align-items: center;
-  height: 100vh;
-  margin-bottom: 20px;
+  margin-top: 6.400rem;
 }
 .body{
   background: rgb(76, 139, 240);
 }
 
 .reg_container{
-    width: clamp(343px, 60%, 600px);
+    width: 270px;
 }
 
 .font {
@@ -21,10 +20,18 @@
   display: flex;
   gap: 5px;
 }
-@media screen and (max-width: 1000px) {
-  .first1{
-      display: block;
-      height: 50vh;
-      margin-top: 20vh;
+@media screen and (min-width: 300px) {
+  .reg_container{
+    width: 340px;
+  }
+}
+@media screen and (min-width: 540px){
+  .reg_container{
+    width: 450px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .reg_container{
+    width: 600px;
   }
 }

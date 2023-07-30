@@ -1,39 +1,68 @@
-.background{
+.containers {
+    margin-top: 20px;
     background-color: rgb(9, 27, 64);
 }
-.containers{
-    max-width: 1200px;
-}
+
 .rows {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 70vh;
-}
-.columns{
-   width: 100%;
-   padding: 0% 15px;
-   margin-top: 5vh;
 }
 
-@media screen and (min-width: 760px) {
-    .columns{
-        width: 50%;
-        margin-top: 4rem;
-    }
-    .rows{
-        height: 40vh;
-    }
+.columns {
+    padding: 1rem 2rem;
+    max-width: 100%;
 }
 
+.gmail {
+    display: flex;
+    cursor: pointer;
+}
+.gmail > p {
+    margin-top: -6px;
+    padding: 0px 8px;
+}
+
+.phone {
+    display: flex;
+    cursor: pointer;
+}
+.phone > p {
+    margin-top: -6px;
+    padding: 0px 4px;
+}
+
+.location {
+    display: flex;
+    cursor: pointer;
+}
+.location > p {
+    margin-top: -6px;
+    padding: 0px 8px;
+}
+
+hr{
+    border-color: white;
+}
+
+@media screen and (min-width: 768px) {
+ .rows{
+    flex-direction: row;
+ }   
+ .columns{
+    width: 45%;
+ }
+}
 @media screen and (min-width: 1000px) {
-    .columns{
-        width: 30%;
-        margin-top: 3rem;
-
-    }
     .rows{
-        display: flex;
+        flex-direction: row;
         justify-content: center;
-    }
+        gap: 2.75rem;
+     }   
+     .columns{
+        width: 30%;
+     }
+     .social-icon{
+        display: flex;
+     }
 }

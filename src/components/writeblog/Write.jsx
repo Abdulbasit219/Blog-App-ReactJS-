@@ -25,8 +25,10 @@ function Write () {
         <>
         {
             login.length === 0 ? (
+            <div className="login-div">
             <div className="h-[72vh] text-login mt-32">
               <p>Log In To create Blog <Link to="/login" className="text-blue-500 underline underline-offset-1">Log In</Link></p>
+            </div>
             </div>
           ) : null
           }

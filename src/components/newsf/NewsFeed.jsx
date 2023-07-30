@@ -46,7 +46,7 @@ function NewsFeed() {
     const getdata = localStorage.getItem('blogsdata')
     if (getdata) {
       const GetDataInArray = JSON.parse(getdata);
-      const newItems = items.concat(GetDataInArray.map((item, index) => ({ ...item, id: index + 1, titles: item.title, contents: item.content, categorys: item.category })));
+      const newItems = items.concat(GetDataInArray.map((item, index) => ({ ...item, id: items.length + index + 1, titles: item.title, contents: item.content, categorys: item.category })));
       setItems(newItems);
     }
   }
